@@ -24,11 +24,18 @@ namespace OnlinePVT.CSharp.FlashSample
         }
         else if (result.ExceptionInfo is not null)
           PrintExceptionInfo(result.ExceptionInfo);
+
+        Console.WriteLine(string.Empty);
+        Console.WriteLine("Press any key to close");
+        Console.ReadKey();
       }
       catch (Exception ex)
       {
+        Console.ForegroundColor = ConsoleColor.Red;
+        PrintLine(string.Empty);
         PrintLine($"Message: {ex.Message}");
         PrintLine($"Stack Trace: {ex.StackTrace}");
+        Console.ResetColor();
       }
     }
 
@@ -153,7 +160,7 @@ namespace OnlinePVT.CSharp.FlashSample
       PrintLine();
     }
 
-    private static void PrintPolymerMoments(ApiOutputCalculationResultPoint result)
+    static void PrintPolymerMoments(ApiOutputCalculationResultPoint result)
     {
       var first_phase_moments = result.Phases[0].PolymerMoments;
       foreach (var momentIndex in Enumerable.Range(0, first_phase_moments.Polymers.Count))
@@ -175,7 +182,7 @@ namespace OnlinePVT.CSharp.FlashSample
       }
     }
 
-    private static void PrintPolymerDistributions(ApiOutputCalculationResultPoint result)
+    static void PrintPolymerDistributions(ApiOutputCalculationResultPoint result)
     {
       var firstPhase = result.Phases[0];
       // find components with distribution (polymers)

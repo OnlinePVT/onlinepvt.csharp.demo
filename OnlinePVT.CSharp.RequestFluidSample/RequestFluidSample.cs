@@ -23,11 +23,18 @@ namespace OnlinePVT.CSharp.FlashSample
         }
         else if (result.ExceptionInfo is not null)
           PrintExceptionInfo(result.ExceptionInfo);
+
+        Console.WriteLine(string.Empty);
+        Console.WriteLine("Press any key to close");
+        Console.ReadKey();
       }
       catch (Exception ex)
       {
+        Console.ForegroundColor = ConsoleColor.Red;
+        PrintLine(string.Empty);
         PrintLine($"Message: {ex.Message}");
         PrintLine($"Stack Trace: {ex.StackTrace}");
+        Console.ResetColor();
       }
     }
 
