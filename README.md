@@ -4,6 +4,9 @@ This repository contains a collection of samples showcasing some typical uses of
 
 > All samples use .NET 6.0
 
+## Status
+![example workflow](https://github.com/github/docs/actions/workflows/dotnet.yml/badge.svg)
+
 ## What is OnlinePVT?
 
 OnlinePVT is the cloud version of VLXE. It supports all the calculations and systems from the Excel version of VLXE but also much more.
