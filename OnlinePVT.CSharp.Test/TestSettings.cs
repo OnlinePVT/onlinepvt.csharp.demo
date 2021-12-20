@@ -13,7 +13,7 @@ namespace OnlinePVT.Test
     [Test]  
     public void TestSettingsEmpty()
     {
-      var basePath = Path.GetFullPath(Path.Combine(System.IO.Directory.GetCurrent‌​Directory(), "..\\..\\..\\..\\"));
+      var basePath = Path.GetFullPath(Path.Combine(System.IO.Directory.GetCurrent‌​Directory(), "..//..//..//..//"));
       var settingFiles = new List<string>
       {
         Path.Combine(basePath, "OnlinePVT.CSharp.CloudPointSample", "appsettings.json"),
