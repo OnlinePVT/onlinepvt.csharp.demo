@@ -5,7 +5,7 @@ This repository contains a collection of samples showcasing some typical uses of
 > All samples use .NET 6.0
 
 ## Status
-![example workflow](https://github.com/github/docs/actions/workflows/dotnet.yml/badge.svg)
+![Test status](https://github.com/OnlinePVT/onlinepvt.csharp.demo/actions/workflows/dotnet.yml/badge.svg)
 
 ## What is OnlinePVT?
 
