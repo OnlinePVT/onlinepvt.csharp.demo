@@ -30,8 +30,8 @@ namespace OnlinePVT.Test
         var userId = config.GetSection("ONLINEPVT_USER_ID").Value;
         var accessSecret = config.GetSection("ONLINEPVT_ACCESS_SECRET").Value;
 
-        Assert.IsNull(userId);
-        Assert.IsNull(accessSecret);
+        Assert.IsTrue(string.IsNullOrEmpty(userId));
+        Assert.IsTrue(string.IsNullOrEmpty(accessSecret));
       }
 
     }
