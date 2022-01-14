@@ -38,12 +38,12 @@ namespace OnlinePVT.CSharp.FlashSample
       }
     }
 
-    static OnlinePvtClient CreateClient(string userId, string accessSecret)
+    static ApiOnlinePvtClient CreateClient(string userId, string accessSecret)
     {
-      return new OnlinePvtClient(new HttpClient(), "https://api.onlinepvt.com", userId, accessSecret);
+      return new ApiOnlinePvtClient(new HttpClient(), "https://api.onlinepvt.com", userId, accessSecret);
     }
 
-    static void PrintExceptionInfo(ExceptionInfo exceptionInfo)
+    static void PrintExceptionInfo(ApiExceptionInfo exceptionInfo)
     {
       PrintLine($"Date: {exceptionInfo.Date}");
       PrintLine($"Message Type: {exceptionInfo.MessageType}");

@@ -1,8 +1,8 @@
-﻿using OnlinePvt.Gateway.Api.Shared.ApiOutput.Point;
+﻿using OnlinePvt.Gateway.Api.Shared.ApiInput;
+using OnlinePvt.Gateway.Api.Shared.ApiOutput.Point;
 using OnlinePvt.Gateway.Api.Shared.Calculations.Flash;
 using OnlinePvt.Gateway.Api.Shared.Client;
 using OnlinePvt.Gateway.Api.Shared.Enumeration;
-using OnlinePvt.Gateway.Api.Shared.Input;
 using OnlinePvt.Gateway.Api.Shared.Utility;
 
 namespace OnlinePVT.CSharp.FlashSample
@@ -39,26 +39,26 @@ namespace OnlinePVT.CSharp.FlashSample
       }
     }
 
-    static OnlinePvtClient CreateClient(string userId, string accessSecret)
+    static ApiOnlinePvtClient CreateClient(string userId, string accessSecret)
     {
-      return new OnlinePvtClient(new HttpClient(), "https://api.onlinepvt.com", userId, accessSecret);
+      return new ApiOnlinePvtClient(new HttpClient(), "https://api.onlinepvt.com", userId, accessSecret);
     }
 
-    static FlashCalculationInput CreateInput(OnlinePvtClient client)
+    static ApiFlashCalculationInput CreateInput(ApiOnlinePvtClient client)
     {
       var input = client.GetFlashInput();
       input.FluidId = new Guid("9E9ABAD5-C6CA-427F-B5E7-15AB3F7CF076");
       input.Temperature = 300;
       input.Pressure = 1;
       input.FlashType = FlashCalculationType.TemperaturePressure;
-      input.Components = new List<CalculationComposition> {
-                new CalculationComposition { Mass = 0.78 },
-                new CalculationComposition { Mass = 0.02 },
-                new CalculationComposition { Mass = 0.2 } };
+      input.Components = new List<ApiCalculationComposition> {
+                new ApiCalculationComposition { Mass = 0.78 },
+                new ApiCalculationComposition { Mass = 0.02 },
+                new ApiCalculationComposition { Mass = 0.2 } };
       return input;
     }
 
-    static void PrintExceptionInfo(ExceptionInfo exceptionInfo)
+    static void PrintExceptionInfo(ApiExceptionInfo exceptionInfo)
     {
       PrintLine($"Date: {exceptionInfo.Date}");
       PrintLine($"Message Type: {exceptionInfo.MessageType}");
